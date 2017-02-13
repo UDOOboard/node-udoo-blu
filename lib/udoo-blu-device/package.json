@@ -1,0 +1,27 @@
+{
+  "name": "udoo-blu",
+  "version": "1.0.1",
+  "description": "Node.js lib for the UDOO BLU",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UDOOboard/node-udoo-blu"
+  },
+  "keywords": [
+    "UDOO",
+    "Blu"
+  ],
+  "author": "udooboard",
+  "license": "",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "async": "^2.0.1",
+    "events": "^1.1.1",
+    "noble": "^1.6.0",
+    "noble-device": "^1.4.0",
+    "util": "^0.10.3"
+  }
+}
