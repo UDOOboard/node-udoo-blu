@@ -15,7 +15,7 @@ bluManager.on('bluDiscover', bluDiscoverCallback);
 bluManager.scan();
 
 setTimeout(function () {
-    testTemperature(blus['247189cd0703']);
+    testTemperature(blus['247189cd0706']);
 }, 12000);
 
 
@@ -47,7 +47,7 @@ function testTemperature(udoobludevice) {
                 console.log('notifyTemperature');
                 udoobludevice.subscribeTemperature(function (error) {
                     setTimeout(function () {
-                        console.log('unnotifyAccelerometer');
+                        console.log('unnotifyTemperature');
                         udoobludevice.unsubscribeTemperature(callback, subscribeTemperature);
                     }, 10000);
                 },subscribeTemperature);

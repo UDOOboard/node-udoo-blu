@@ -15,7 +15,7 @@ bluManager.on('bluDiscover', bluDiscoverCallback);
 bluManager.scan();
 
 setTimeout(function () {
-    testBarometer(blus['247189cd0703']);
+    testBarometer(blus['247189cd0706']);
 }, 12000);
 
 

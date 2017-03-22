@@ -1,37 +1,39 @@
-var UDOOBlu = require('./lib/udoo-blu-device/');
+var BluManager = require('./lib/udoo-blu-device');
 var async = require('async');
 
-console.log('--------START-------');
-UDOOBlu.discoverAll(function (udoobludevice) {
-    console.log('found ' + udoobludevice.id);
+var bluManager = new BluManager();
 
-    if (udoobludevice.id === 'b0b448c3b181') {
-        udoobludevice.on('disconnect', function (data) {
-            console.log('disconnected!' + data);
-            process.exit(0);
-        });
+var blus = {};
 
-        udoobludevice.on('disconnect', function () {
-            console.log('disconnected!');
-            process.exit(0);
-        });
+var bluDiscoverCallback = function (blu_per) {
+    console.log('dd ', blu_per.id);
+    blus[blu_per.id] = blu_per;
+}
 
-        async.series([
-            function (callback) {
-                console.log('connectAndSetUp');
-                udoobludevice.connectAndSetUp(callback);
-            },
-             function (callback) {
-                setTimeout(callback, 2000);
-            },
-            function (callback) {
-                console.log('set led');
-                udoobludevice.setLed(udoobludevice.LED.YELLOW, udoobludevice.LEDSTATE.ON, callback);
-            },
-            function (callback) {
-                setTimeout(callback, 2000);
-            },
-        
-        ]);
-    }
-});
+bluManager.on('bluDiscover', bluDiscoverCallback);
+
+bluManager.scan();
+
+setTimeout(function () {
+    testLed(blus['247189cd0706']);
+}, 12000);
+
+function testLed(udoobludevice) {
+    async.series([
+        function (callback) {
+            console.log('connectAndSetUp');
+            udoobludevice.connectAndSetUp(callback);
+        },
+        function (callback) {
+            setTimeout(callback, 2000);
+        },
+        function (callback) {
+            console.log('set led');
+            udoobludevice.setLed(udoobludevice.LED.YELLOW, udoobludevice.LEDSTATE.ON, callback);
+        },
+        function (callback) {
+            setTimeout(callback, 2000);
+        },
+
+    ]);
+}

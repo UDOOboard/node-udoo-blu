@@ -16,7 +16,7 @@ bluManager.on('bluDiscover', bluDiscoverCallback);
 // blu.on('bluConnectAndSetup', bluConnectAndSetupCallback);
 
 setTimeout(function () {
-    gpio(blus['247189cd0382']);
+    gpio(blus['247189cd0706']);
 }, 12000);
 
 

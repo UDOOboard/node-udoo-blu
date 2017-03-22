@@ -13,7 +13,7 @@ var bluDiscoverCallback = function (blu_per) {
 bluManager.on('bluDiscover', bluDiscoverCallback);
 
 setTimeout(function () {
-    testAccelerometer(blus['247189cd0703']);
+    testAccelerometer(blus['247189cd0706']);
 }, 12000);
 
 

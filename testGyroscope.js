@@ -11,7 +11,7 @@ var blus = {};
 var bluDiscoverCallback = function (blu_per) {
     console.log('dd ', blu_per.id);
     blus[blu_per.id] = blu_per;
-    if (blu_per.id === '247189cd0703') {
+    if (blu_per.id === '247189cd0706') {
         setTimeout(function () {
             testGyroscope(blu_per);
         }, 12000);

@@ -15,7 +15,7 @@ bluManager.on('bluDiscover', bluDiscoverCallback);
 bluManager.scan();
 
 setTimeout(function () {
-    testHumidity(blus['247189cd0703']);
+    testHumidity(blus['247189cd0706']);
 }, 12000);
 
 

@@ -15,7 +15,7 @@ bluManager.on('bluDiscover', bluDiscoverCallback);
 bluManager.scan();
 
 setTimeout(function () {
-    testMagnetometer(blus['247189cd0703']);
+    testMagnetometer(blus['247189cd0706']);
 }, 12000);
 
 
