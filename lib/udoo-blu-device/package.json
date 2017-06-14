@@ -20,8 +20,8 @@
   "dependencies": {
     "async": "^2.0.1",
     "events": "^1.1.1",
-    "noble": "^1.6.0",
-    "noble-device": "^1.4.0",
+    "noble": "^1.8.1",
+    "noble-device": "^1.4.1",
     "util": "^0.10.3"
   }
 }
