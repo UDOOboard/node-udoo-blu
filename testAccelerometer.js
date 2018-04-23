@@ -6,16 +6,16 @@ var bluManager = new BluManager();
 var blus = {};
 
 var bluDiscoverCallback = function (blu_per) {
-    console.log('dd ', blu_per.id);
     blus[blu_per.id] = blu_per;
 }
 
 bluManager.on('bluDiscover', bluDiscoverCallback);
 
-setTimeout(function () {
-    testAccelerometer(blus['247189cd0485']);
-}, 12000);
-
+bluManager.on('endDiscover', function () {
+    console.log(`endDiscover`);
+    var blu = blus['247189cd0485'];
+    if(blu) testAccelerometer(blu);
+});
 
 bluManager.scan();
 
